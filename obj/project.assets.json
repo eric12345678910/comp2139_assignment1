@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ericlaudrum/Documents/GeorgeBrown/Semester4-Winter25/COMP2139/Assignment1/COMP2139_Assignment1/COMP2139_Assignment1.csproj",
+      "projectUniqueName": "/Users/ericlaudrum/Documents/GeorgeBrown/Semester4-Winter25/COMP2139/Assignment1/comp2139_assignment1/COMP2139_Assignment1.csproj",
       "projectName": "COMP2139_Assignment1",
-      "projectPath": "/Users/ericlaudrum/Documents/GeorgeBrown/Semester4-Winter25/COMP2139/Assignment1/COMP2139_Assignment1/COMP2139_Assignment1.csproj",
+      "projectPath": "/Users/ericlaudrum/Documents/GeorgeBrown/Semester4-Winter25/COMP2139/Assignment1/comp2139_assignment1/COMP2139_Assignment1.csproj",
       "packagesPath": "/Users/ericlaudrum/.nuget/packages/",
-      "outputPath": "/Users/ericlaudrum/Documents/GeorgeBrown/Semester4-Winter25/COMP2139/Assignment1/COMP2139_Assignment1/obj/",
+      "outputPath": "/Users/ericlaudrum/Documents/GeorgeBrown/Semester4-Winter25/COMP2139/Assignment1/comp2139_assignment1/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ericlaudrum/.nuget/NuGet/NuGet.Config"
