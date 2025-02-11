@@ -28,4 +28,11 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+    public IActionResult Inventory()
+    {
+        Inventory inventory = new Inventory(); // Create new inventory obejct 
+        
+        // TODO add products +/ return statement 
+    }
 }
