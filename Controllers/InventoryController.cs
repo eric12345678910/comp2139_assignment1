@@ -5,6 +5,13 @@ namespace COMP2139_Assignment1.Controllers;
 
 public class InventoryController : Controller
 {
+
+    public readonly Inventory _inventory;
+
+    public InventoryController(Inventory inventory)
+    {
+        _inventory = inventory;
+    }
     
     // Display Add Product Form
     [HttpGet]
@@ -18,10 +25,8 @@ public class InventoryController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult AddProduct(Product product)
     {
-        // Create instance of inventory
-        Inventory inventory = new Inventory();
-
-        inventory.AddProduct(product);
+ 
+        _inventory.AddProduct(product);
 
         return RedirectToAction("Inventory");
     }
