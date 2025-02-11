@@ -6,6 +6,7 @@ namespace COMP2139_Assignment1.Controllers;
 public class InventoryController : Controller
 {
 
+    // Hold instance of inventory class
     public readonly Inventory _inventory;
 
     public InventoryController(Inventory inventory)
