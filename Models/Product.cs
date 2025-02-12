@@ -24,7 +24,8 @@ public class Product
 
     public Product(string productName)
     {
-        ProductName = productName;
+        // Set non-nullable ProductName
+        ProductName = productName ?? throw new ArgumentNullException(nameof(productName));
     }
     
 
