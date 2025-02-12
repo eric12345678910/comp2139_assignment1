@@ -14,7 +14,7 @@ public class InventoryController : Controller
         _inventory = inventory;
     }
 
-    public IActionResult Inventory()
+    public IActionResult ViewInventory()
     {
         return View();
     }
@@ -24,10 +24,10 @@ public class InventoryController : Controller
     public IActionResult Index()
     {
         // Retreive all products from inventory
-        var inventory = _inventory.GetProducts().ToList();
-        var projects = _context.Projects.ToList();
+        var products = _inventory.GetProducts();
         return View(products);
     }
+    
     [HttpGet]
     public IActionResult AddProduct()
     {

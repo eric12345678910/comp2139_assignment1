@@ -5,7 +5,7 @@ public class Inventory
     // ---------------------------------------------    Attributes
     private List<Product> _products = new List<Product>();
 
-    
+    public List<Product> Products => _products;
     
     // ---------------------------------------------    Methods
     

@@ -3,18 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace COMP2139_Assignment1.Data;
 
-public class ApplicationDbContext : DbContext
+public class InventoryDbContext : DbContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-    {
-        
-    }
-
-    public DbSet<Inventory> Inventories
-    {
-        get;
-        set;
-    }
-
-
+    public InventoryDbContext(DbContextOptions<InventoryDbContext> options) : base(options) { }
+    
+    public DbSet<Product> Products { get; set; }
+    
 }

@@ -7,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 //builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<InventoryDbContext>(options =>
+    options.UseNpgsql("Host=localhost;Port=5432;Database=InventoryManagementDB;Username=postgres;Password=password"));
 
 
 var app = builder.Build();
