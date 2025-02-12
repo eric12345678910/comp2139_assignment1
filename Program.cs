@@ -1,15 +1,19 @@
 
 using COMP2139_Assignment1.Data;
+using COMP2139_Assignment1.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-//builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews();
 
+
+// Add the context to the service collection with a connection string
 builder.Services.AddDbContext<InventoryDbContext>(options =>
-    options.UseNpgsql("Host=localhost;Port=5432;Database=InventoryManagementDB;Username=postgres;Password=password"));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.WebHost.UseUrls("http://localhost:5100"); // Set Port
 
 var app = builder.Build();
 

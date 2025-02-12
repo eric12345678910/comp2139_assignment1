@@ -21,6 +21,11 @@ public class Product
     private int Quantity { get; set; }
     public bool LowStockAlert { get; set; }
 
+
+    public Product(string productName)
+    {
+        ProductName = productName;
+    }
     
 
 }
