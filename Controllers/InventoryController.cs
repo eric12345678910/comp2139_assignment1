@@ -1,5 +1,7 @@
+
 using COMP2139_Assignment1.Models;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace COMP2139_Assignment1.Controllers;
 
@@ -7,11 +9,16 @@ public class InventoryController : Controller
 {
 
     // Hold instance of inventory class
-    public readonly Inventory _inventory;
+    private readonly Inventory _inventory;
 
     public InventoryController(Inventory inventory)
     {
         _inventory = inventory;
+    }
+
+    public IActionResult Inventory()
+    {
+        return View();
     }
     
     // Display Add Product Form
@@ -26,10 +33,13 @@ public class InventoryController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult AddProduct(Product product)
     {
- 
+        // Add product to inventory
         _inventory.AddProduct(product);
 
+        // Redirect to Inventory
         return RedirectToAction("Inventory");
     }
+
+
     
 }

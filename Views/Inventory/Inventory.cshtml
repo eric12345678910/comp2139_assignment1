@@ -1,0 +1,33 @@
+@model Inventory
+
+@{
+    ViewBag.Title = "Inventory";
+    Layout = "_Layout";
+}
+
+<h2>Inventory</h2>
+
+<!-- Display Product Information Table -->
+<section class="viewInventory">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+</section>
+
+
+<!-- Add Product User Form -->
+<h2>Add Product to Inventory</h2>
+
+
+<!-- TODO: add form from AddProducts page -->
+<form asp-action="AddProduct" method="POST">
+    <input type="text" name="ProductName" placeholder="Product Name"/>
+    <input type="number" name="Price" placeholder="Price"/>
+    <input type="number" name="Quantity" placeholder="Quantity"/>
+    
+    <button type="submit">Add</button>
+</form>
