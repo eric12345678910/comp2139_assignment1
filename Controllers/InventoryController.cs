@@ -2,15 +2,13 @@
 using COMP2139_Assignment1.Models;
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace COMP2139_Assignment1.Controllers;
 
 public class InventoryController : Controller
 {
-
     // Hold instance of inventory class
     private readonly Inventory _inventory;
-
+    
     public InventoryController(Inventory inventory)
     {
         _inventory = inventory;
@@ -22,6 +20,14 @@ public class InventoryController : Controller
     }
     
     // Display Add Product Form
+    [HttpGet]
+    public IActionResult Index()
+    {
+        // Retreive all products from inventory
+        var inventory = _inventory.GetProducts().ToList();
+        var projects = _context.Projects.ToList();
+        return View(products);
+    }
     [HttpGet]
     public IActionResult AddProduct()
     {
