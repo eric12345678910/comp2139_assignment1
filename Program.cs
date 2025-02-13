@@ -4,7 +4,6 @@ using COMP2139_Assignment1.Models;
 using Microsoft.EntityFrameworkCore;
 
 
-
 public class Program
 {
     public static void Main(string[] args)
@@ -13,10 +12,10 @@ public class Program
 
         
         // Add the context to the service collection with a connection string
-        builder.Services.AddDbContext<InventoryDbContext>(options =>
+        builder.Services.AddDbContext<COMP2139_Assignment1.Data.InventoryDbContext>(options =>
             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-        builder.Services.AddScoped<InventoryDb>();
+        
         
         builder.Services.AddControllersWithViews();
 

@@ -1,21 +1,28 @@
 @model List<COMP2139_Assignment1.Models.Product>
 
-@{
-    ViewBag.Title = "Inventory";
-    Layout = "_Layout";
-}
-
 <h2>Inventory</h2>
 
 <!-- Display Product Information Table -->
 <section class="viewInventory">
     <thead>
     <tr>
+        <th>Product ID</th>
         <th>Name</th>
         <th>Price</th>
         <th>Quantity</th>
+        <th>Category</th>
     </tr>
     </thead>
+    <tbody>
+    @foreach (var product in Model)
+    {
+        <td>@product.ProductId</td>
+        <td>@product.ProductName</td>
+        <td>@product.Price</td>
+        <td>@product.Quantity</td>
+        <td>@product.Category</td>
+    }
+    </tbody>
 </section>
 
 

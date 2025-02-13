@@ -9,23 +9,29 @@ namespace COMP2139_Assignment1.Controllers;
 public class InventoryController : Controller
 {
     // Hold instance of inventory class
-    private readonly InventoryDb _inventory;
+    private readonly InventoryDbContext _context;
     
-    public InventoryController(InventoryDb inventory)
+    public InventoryController(InventoryDbContext context)
     {
-        _inventory = inventory;
+        _context = context;
+    }
+
+    public IActionResult Index()
+    {
+        var inventory = _context.Products.ToList();
+        return View(inventory);
     }
 
     [HttpGet]
     public IActionResult ViewInventory()
     {
-        var products = _inventory.GetProducts();
+        var products = _context.Products.ToList();
         return View(products);
     }
 
     public IActionResult Details(int id)
     {
-        var product = _inventory.GetProducts().FirstOrDefault(p => p.ProductId == id);
+        var product = _context.Products.FirstOrDefault(p => p.ProductId == id);
         if (product == null)
         {
             return NotFound();
@@ -33,19 +39,15 @@ public class InventoryController : Controller
         return View(product);
     }
 
-    [HttpGet]
-    public IActionResult AddProduct()
-    {
-        return View();
-    }
-
+    
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult AddProduct(Product product)
     {
         if (ModelState.IsValid)
         {
-            _inventory.AddProduct(product);
+            _context.Products.Add(product);
+            _context.SaveChanges();
             return RedirectToAction("ViewInventory");
         }
         

@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace COMP2139_Assignment1.Migrations
 {
     [DbContext(typeof(InventoryDbContext))]
-    [Migration("20250213021150_InitialCreate2")]
-    partial class InitialCreate2
+    [Migration("20250213162119_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
