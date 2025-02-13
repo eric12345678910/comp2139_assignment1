@@ -40,12 +40,15 @@ public class InventoryController : Controller
     }
 
     
+    
+    
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult AddProduct(Product product)
     {
         if (ModelState.IsValid)
         {
+            // Add and Save product to Inventory DB
             _context.Products.Add(product);
             _context.SaveChanges();
             return RedirectToAction("ViewInventory");
