@@ -39,8 +39,12 @@ public class InventoryController : Controller
         return View(product);
     }
 
-    
-    
+
+    [HttpGet]
+    public IActionResult AddProduct()
+    {
+        return View(); 
+    }
     
     [HttpPost]
     [ValidateAntiForgeryToken]
