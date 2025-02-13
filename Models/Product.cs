@@ -13,20 +13,22 @@ public class Product
     [StringLength(100)]
     public string ProductName { get; set; }
     
-    [Column(TypeName = "decimal(18,2")]
+    [Column(TypeName = "decimal(18,2)")]
     public decimal Price { get; set; }
     
+    // Foregin key
     public int CategoryId { get; set; }
-    //public Category Category { get; set; }
-    private int Quantity { get; set; }
+    
+    // Navigation property
+    public Category Category { get; set; }
+
+    public int Quantity { get; set; }
+    
     public bool LowStockAlert { get; set; }
-
-
+    
     public Product(string productName)
     {
         // Set non-nullable ProductName
         ProductName = productName ?? throw new ArgumentNullException(nameof(productName));
     }
-    
-
 }

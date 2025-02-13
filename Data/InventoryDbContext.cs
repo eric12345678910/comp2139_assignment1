@@ -7,6 +7,7 @@ public class InventoryDbContext : DbContext
 {
     public InventoryDbContext(DbContextOptions<InventoryDbContext> options) : base(options) { }
     
+    // Products Table
     public DbSet<Product> Products { get; set; }
     
 }
