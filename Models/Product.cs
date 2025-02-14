@@ -16,15 +16,15 @@ public class Product
     [Column(TypeName = "decimal(18,2)")]
     public decimal Price { get; set; }
     
-    // Foregin key
     public int CategoryId { get; set; }
     
     // Navigation property
-    public Category Category { get; set; }
+    public int Category { get; set; }
 
     public int Quantity { get; set; }
     
-    public bool LowStockAlert { get; set; }
+    
+    public Product(){}
     
     public Product(string productName)
     {

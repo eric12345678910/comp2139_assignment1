@@ -35,7 +35,7 @@ namespace COMP2139_Assignment1.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Category");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("COMP2139_Assignment1.Models.Product", b =>
@@ -48,9 +48,6 @@ namespace COMP2139_Assignment1.Migrations
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("integer");
-
-                    b.Property<bool>("LowStockAlert")
-                        .HasColumnType("boolean");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");

@@ -58,6 +58,7 @@ public class InventoryController : Controller
             return RedirectToAction("ViewInventory");
         }
         
+        // If state not valid, stay on product
         return View(product);
     }
 }
