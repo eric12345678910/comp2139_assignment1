@@ -15,11 +15,11 @@ public class Product
     
     [Column(TypeName = "decimal(18,2)")]
     public decimal Price { get; set; }
+
+    [StringLength(100)]
+    public string Category { get; set; }
     
     public int CategoryId { get; set; }
-    
-    // Navigation property
-    public int Category { get; set; }
 
     public int Quantity { get; set; }
     

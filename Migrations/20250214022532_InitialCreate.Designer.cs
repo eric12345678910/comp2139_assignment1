@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace COMP2139_Assignment1.Migrations
 {
     [DbContext(typeof(InventoryDbContext))]
-    [Migration("20250214004918_InitialCreate")]
+    [Migration("20250214022532_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -49,6 +49,11 @@ namespace COMP2139_Assignment1.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ProductId"));
 
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("integer");
 
@@ -72,13 +77,11 @@ namespace COMP2139_Assignment1.Migrations
 
             modelBuilder.Entity("COMP2139_Assignment1.Models.Product", b =>
                 {
-                    b.HasOne("COMP2139_Assignment1.Models.Category", "Category")
+                    b.HasOne("COMP2139_Assignment1.Models.Category", null)
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("COMP2139_Assignment1.Models.Category", b =>
